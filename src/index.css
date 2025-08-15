@@ -2,17 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-   
+    --background: 220 13% 99%;
+    --foreground: 220 9% 9%;
+    --card: 220 13% 97%;
+    --card-foreground: 220 9% 9%;
+    --popover: 220 13% 99%;
+    --popover-foreground: 220 9% 9%;
+    --primary: 220 91% 55%;
+    --primary-foreground: 220 9% 99%;
+    --secondary: 220 9% 95%;
+    --secondary-foreground: 220 9% 9%;
+    --muted: 220 9% 95%;
+    --muted-foreground: 220 9% 45%;
+    --accent: 220 9% 90%;
+    --accent-foreground: 220 9% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 9% 99%;
+    --border: 220 9% 88%;
+    --input: 220 9% 88%;
+    --ring: 220 91% 55%;
+    --radius: 0.5rem;
+    
+    /* JSON syntax highlighting colors */
+    --json-string: 142 76% 36%;
+    --json-number: 217 92% 59%;
+    --json-boolean: 284 100% 65%;
+    --json-null: 0 0% 50%;
+    --json-key: 220 9% 9%;
+    --json-bracket: 220 9% 35%;
+    --json-brace: 220 9% 35%;
+    --json-comma: 220 9% 35%;
+    --json-colon: 220 9% 35%;
+    
+    /* Tree view colors */
+    --tree-expand: 220 9% 65%;
+    --tree-line: 220 9% 85%;
+    --tree-hover: 220 9% 93%;
   }
 
   .dark {
-
+    --background: 220 13% 9%;
+    --foreground: 220 9% 95%;
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 95%;
+    --popover: 220 13% 9%;
+    --popover-foreground: 220 9% 95%;
+    --primary: 220 91% 65%;
+    --primary-foreground: 220 9% 9%;
+    --secondary: 220 9% 15%;
+    --secondary-foreground: 220 9% 95%;
+    --muted: 220 9% 15%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 220 9% 20%;
+    --accent-foreground: 220 9% 95%;
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 220 9% 9%;
+    --border: 220 9% 20%;
+    --input: 220 9% 20%;
+    --ring: 220 91% 65%;
+    
+    /* JSON syntax highlighting colors - dark mode */
+    --json-string: 142 76% 60%;
+    --json-number: 217 92% 75%;
+    --json-boolean: 284 100% 80%;
+    --json-null: 0 0% 65%;
+    --json-key: 220 9% 90%;
+    --json-bracket: 220 9% 70%;
+    --json-brace: 220 9% 70%;
+    --json-comma: 220 9% 70%;
+    --json-colon: 220 9% 70%;
+    
+    /* Tree view colors - dark mode */
+    --tree-expand: 220 9% 70%;
+    --tree-line: 220 9% 25%;
+    --tree-hover: 220 9% 18%;
   }
 }
 
@@ -23,5 +88,51 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .json-string {
+    color: hsl(var(--json-string));
+  }
+  
+  .json-number {
+    color: hsl(var(--json-number));
+  }
+  
+  .json-boolean {
+    color: hsl(var(--json-boolean));
+  }
+  
+  .json-null {
+    color: hsl(var(--json-null));
+  }
+  
+  .json-key {
+    color: hsl(var(--json-key));
+    font-weight: 500;
+  }
+  
+  .json-bracket,
+  .json-brace,
+  .json-comma,
+  .json-colon {
+    color: hsl(var(--json-bracket));
+  }
+  
+  .tree-item {
+    @apply transition-colors duration-150;
+  }
+  
+  .tree-item:hover {
+    background-color: hsl(var(--tree-hover));
+  }
+  
+  .tree-expand-button {
+    color: hsl(var(--tree-expand));
+  }
+  
+  .tree-line {
+    border-color: hsl(var(--tree-line));
   }
 }
