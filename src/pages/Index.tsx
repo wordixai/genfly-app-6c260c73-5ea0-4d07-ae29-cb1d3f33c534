@@ -1,10 +1,10 @@
-import JsonEditor from '@/components/JsonEditor';
+import JsonViewer from '@/components/JsonViewer';
 import { Toaster } from '@/components/ui/toaster';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <JsonEditor />
+      <JsonViewer />
       <Toaster />
     </div>
   );
